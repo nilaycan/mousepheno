@@ -47,6 +47,7 @@ setParams({
             this setting can't be changed from the User Interface
         */
     showEdgeLabel : false,
+    showNodeLabel : false,
     sortNodeAttributes: true,
         /*
             Alphabetically sort node attributes
