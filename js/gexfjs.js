@@ -256,6 +256,9 @@ function replaceURLWithHyperlinks(text) {
 }
 
 function displayNode(_nodeIndex, _recentre) {
+    var button = document.getElementById('nodebutton');
+    var button2 = document.getElementById('pngbutton');
+    document.getElementById("exportlink").style.visibility = "visible";
     GexfJS.params.currentNode = _nodeIndex;
     if (_nodeIndex != -1) {
         var _d = GexfJS.graph.nodeList[_nodeIndex],
@@ -1204,4 +1207,17 @@ $(document).ready(function() {
         }
         return false;
     });
+    $("a#exportlink").click(function(){
+        var items = $($('#leftcontent ul')[1])[0]['children'];
+        var display = 'Nodes\n';
+        for (var i = 0; i < items.length; i++) {
+            display += items[i]['innerText'] + '\n';
+        }
+        //alert(display);
+        //display = display.replace(/ /g, '%20');
+        this.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(display);;
+        //a.download = 'exported_nodes.txt';
+    //var now = new Date().toString();
+    //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
+});
 });
