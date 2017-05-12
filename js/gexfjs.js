@@ -256,9 +256,8 @@ function replaceURLWithHyperlinks(text) {
 }
 
 function displayNode(_nodeIndex, _recentre) {
-    var button = document.getElementById('nodebutton');
-    var button2 = document.getElementById('pngbutton');
     document.getElementById("exportlink").style.visibility = "visible";
+    document.getElementById("exportpng").style.visibility = "visible";
     GexfJS.params.currentNode = _nodeIndex;
     if (_nodeIndex != -1) {
         var _d = GexfJS.graph.nodeList[_nodeIndex],
@@ -1219,5 +1218,16 @@ $(document).ready(function() {
         //a.download = 'exported_nodes.txt';
     //var now = new Date().toString();
     //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
+});
+
+    $("a#exportlink").click(function(){
+        html2canvas(document.body, {
+        onrendered: function(canvas) {
+        document.body.appendChild(canvas);
+        },
+        width: 300,
+         height: 300
+    });
+
 });
 });
