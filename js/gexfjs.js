@@ -1214,20 +1214,20 @@ $(document).ready(function() {
         }
         //alert(display);
         //display = display.replace(/ /g, '%20');
-        this.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(display);;
+        this.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(display);
         //a.download = 'exported_nodes.txt';
-    //var now = new Date().toString();
-    //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
-});
-
-    $("a#exportlink").click(function(){
-        html2canvas(document.body, {
-        onrendered: function(canvas) {
-        document.body.appendChild(canvas);
-        },
-        width: 300,
-         height: 300
+        //var now = new Date().toString();
+        //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
     });
 
-});
+    $("a#exportpng").click(function(e){
+        //e.preventDefault();
+        var canvasElement = document.getElementById('carte');
+        //console.log(canvasElement);
+        var MIME_TYPE = "image/png";
+        var imgURL = canvasElement.toDataURL(MIME_TYPE);
+        this.href = imgURL;
+        this.dataset.downloadurl = [MIME_TYPE, this.download, this.href].join(':');
+        //this.click();
+    });
 });

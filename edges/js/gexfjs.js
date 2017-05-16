@@ -258,7 +258,7 @@ function replaceURLWithHyperlinks(text) {
 function displayNode(_nodeIndex, _recentre) {
     GexfJS.params.currentNode = _nodeIndex;
     document.getElementById("exportlink").style.visibility = "visible";
-
+    document.getElementById("exportpng").style.visibility = "visible";
     if (_nodeIndex != -1) {
         var _d = GexfJS.graph.nodeList[_nodeIndex],
             _b = _d.coords.base,
@@ -1218,5 +1218,15 @@ $(document).ready(function() {
         //a.download = 'exported_nodes.txt';
     //var now = new Date().toString();
     //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
+    });
+    $("a#exportpng").click(function(e){
+        //e.preventDefault();
+        var canvasElement = document.getElementById('carte');
+        //console.log(canvasElement);
+        var MIME_TYPE = "image/png";
+        var imgURL = canvasElement.toDataURL(MIME_TYPE);
+        this.href = imgURL;
+        this.dataset.downloadurl = [MIME_TYPE, this.download, this.href].join(':');
+        //this.click();
     });
 });
