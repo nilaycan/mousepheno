@@ -1,7 +1,7 @@
 /*** USE THIS FILE TO SET OPTIONS ***/
 
 setParams({
-    graphFile : "Untitled.gexf",
+    graphFile : "genes_nodes.gexf",
         /*
             The GEXF file to show ! -- can be overriden by adding
             a hash to the document location, e.g. index.html#celegans.gexf
@@ -23,7 +23,7 @@ setParams({
             False for curved edges, true for straight edges
             this setting can't be changed from the User Interface
         */
-    edgeWidthFactor : 3,
+    edgeWidthFactor : 1,
         /*
             Change this parameter for wider or narrower edges
             this setting can't be changed from the User Interface
@@ -46,7 +46,7 @@ setParams({
             Show the weight of edges in the list
             this setting can't be changed from the User Interface
         */
-    showEdgeLabel : false,
+    showEdgeLabel : true,
     sortNodeAttributes: true,
         /*
             Alphabetically sort node attributes
