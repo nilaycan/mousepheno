@@ -63,6 +63,14 @@ h1 span {
     position: absolute; left: 560px; top: 13px; width: 20px; height: 20px; margin: 0; padding: 0; height: 16px; border: none; background: none; text-indent: -999px; cursor: pointer; cursor: hand;
 }
 
+#exportlink {
+    position: absolute; left: 675px; top: 15px; width: 80px; height: 15px; margin: 0; padding: 0;
+}
+
+#exportpng {
+    position: absolute; left: 775px; top: 15px; width: 65px; height: 15px; margin: 0; padding: 0;
+}
+
 .grey {
     color: #cccccc; font-style: italic;
 }
