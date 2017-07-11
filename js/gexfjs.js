@@ -1206,7 +1206,6 @@ $(document).ready(function() {
         }
         return false;
     });
-    
 
 $("a#exportlink").click(function(){
         var items = $($('#leftcontent ul')[1])[0]['children'];
