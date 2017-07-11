@@ -1206,42 +1206,7 @@ $(document).ready(function() {
         }
         return false;
     });
-    $("a#exportlink").click(function(){
-        var items = $($('#leftcontent ul')[1])[0]['children'];
-        var gene = $('#leftcontent h3').text();
-        if (gene.indexOf(":") >= 0) {
-             var res = gene.split(":");
-             var display = res[1].substring(1)+'\n';
-        }
-        else{
-            var display = gene + '\n';
-        }
-
-       for (var i = 0; i < items.length; i++) {
-            if (items[i]['innerText'].indexOf("[") >= 0) {
-             var res = items[i]['innerText'].split("[");
-             var name = res[0];
-             var res2 = res[1].split("]");
-             var weight = res2[0];
-             display += name + '\t' + weight + '\n';
-        }
-        else{          
-            var name = items[i]['innerText'];
-             var weight = 1;
-             display += name + '\t' + weight + '\n';
-        }
-        }
-        this.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(display);
-    });
-
-    $("a#exportpng").click(function(e){
-        var canvasElement = document.getElementById('carte');
-        var MIME_TYPE = "image/png";
-        var imgURL = canvasElement.toDataURL(MIME_TYPE);
-        this.href = imgURL;
-        this.dataset.downloadurl = [MIME_TYPE, this.download, this.href].join(':');
-    });
-});
+    
 
 $("a#exportlink").click(function(){
         var items = $($('#leftcontent ul')[1])[0]['children'];
