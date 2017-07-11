@@ -1212,12 +1212,12 @@ $(document).ready(function() {
         var gene = $('#leftcontent h3').text();
         if (gene.indexOf(":") >= 0) {
              var res = gene.split(":");
-             var display = res[1].substring(1)+'\n';
+             var display = res[1].substring(1)+'\t Edge Weight'+'\n';
         }
         else{
            
             //var display = GexfJS.params.showEdgeWeight + '\n';
-           var display = gene + '\n';
+           var display = gene + '\t Edge Weight'+'\n';
         }
        
         //
