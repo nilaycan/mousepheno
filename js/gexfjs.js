@@ -1251,7 +1251,7 @@ $("a#exportlink").click(function(){
              var display = res[1].substring(1)+'\t Edge Weight'+'\n';
         }
         else{
-            var display = gene +'\t Edge Weight'+ '\n';
+            var display = gene+'\t Edge Weight' + '\n';
         }
 
        for (var i = 0; i < items.length; i++) {
