@@ -46,7 +46,7 @@ setParams({
             Show the weight of edges in the list
             this setting can't be changed from the User Interface
         */
-    showEdgeLabel : true,
+    showEdgeLabel : false,
     sortNodeAttributes: true,
         /*
             Alphabetically sort node attributes
