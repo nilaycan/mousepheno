@@ -1,0 +1,6 @@
+$($('#leftcontent ul')[1])[0]['children'][0]['innerText']
+
+
+git add .
+git commit -m"try"
+git push origin gh-pages
