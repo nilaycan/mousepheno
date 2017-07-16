@@ -256,9 +256,9 @@ function replaceURLWithHyperlinks(text) {
 }
 
 function displayNode(_nodeIndex, _recentre) {
-    GexfJS.params.currentNode = _nodeIndex;
     document.getElementById("exportlink").style.visibility = "visible";
     document.getElementById("exportpng").style.visibility = "visible";
+    GexfJS.params.currentNode = _nodeIndex;
     if (_nodeIndex != -1) {
         var _d = GexfJS.graph.nodeList[_nodeIndex],
             _b = _d.coords.base,
@@ -1208,42 +1208,18 @@ $(document).ready(function() {
     });
     $("a#exportlink").click(function(){
         var items = $($('#leftcontent ul')[1])[0]['children'];
-       // var display = 'Nodes\n';
-        var gene = $('#leftcontent h3').text();
-        if (gene.indexOf(":") >= 0) {
-             var res = gene.split(":");
-             var display = res[1].substring(1)+'\n';
-        }
-        else{
-           
-            //var display = GexfJS.params.showEdgeWeight + '\n';
-           var display = gene + '\n';
-        }
-       
-        //
+        var display = 'Nodes\n';
         for (var i = 0; i < items.length; i++) {
-            if (items[i]['innerText'].indexOf("[") >= 0) {
-             var res = items[i]['innerText'].split("[");
-             var name = res[0];
-             var res2 = res[1].split("]");
-             var weight = res2[0];
-             display += name + '\t' + weight + '\n';
-        }
-        else{
-           
-            var name = items[i]['innerText'];
-             var weight = 1;
-             display += name + '\t' + weight + '\n';
-        }
-            //display += items[i]['innerText'] + '\t' + 'asd' + '\n';
+            display += items[i]['innerText'] + '\n';
         }
         //alert(display);
         //display = display.replace(/ /g, '%20');
-        this.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(display);;
+        this.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(display);
         //a.download = 'exported_nodes.txt';
-    //var now = new Date().toString();
-    //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
+        //var now = new Date().toString();
+        //this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
     });
+
     $("a#exportpng").click(function(e){
         //e.preventDefault();
         var canvasElement = document.getElementById('carte');
